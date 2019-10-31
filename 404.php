@@ -13,6 +13,21 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+			<?php
+			$custom_404_id = get_theme_mod( 'custom_404_id' );
+			
+			// Show custom 404 page if one has been assigned
+			if ( $custom_404_id > 0 ) :
+				$custom_404_query = new WP_Query( array( 'page_id' => $custom_404_id ) );
+				while ( $custom_404_query->have_posts() ) :
+					$custom_404_query->the_post();
+					get_template_part( 'template-parts/content', 'page' );
+				endwhile;
+				wp_reset_postdata();
+			
+			// Otherwise, use the template below
+			else:
+			?>
 			<section class="error-404 not-found">
 				<header class="page-header">
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'autua' ); ?></h1>
@@ -52,6 +67,9 @@ get_header();
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
+			<?php
+			endif;
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
