@@ -1,6 +1,10 @@
 .wp-block-search {
     width: 100%;
     max-width: 400px;
+
+    & .wp-block-search__button {
+        margin-left: 3px;
+    }
 }
 
 @import "buttons";
