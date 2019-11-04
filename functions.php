@@ -165,3 +165,20 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Exclude custom 404 page from search results.
+ * 
+ * @param WP_Query The query to be filtered.
+ * @return WP_Query
+ */
+if ( ! is_admin() ) {
+	function autua_search_filter( $query ) {
+		$custom_404_id = get_theme_mod( 'custom_404_id' );
+		if ( $query->is_search() && $custom_404_id > 0 ) {
+			$query->set( 'post__not_in', array( $custom_404_id ) );
+		}
+		return $query;
+	}
+	add_filter( 'pre_get_posts', 'autua_search_filter' );
+}
