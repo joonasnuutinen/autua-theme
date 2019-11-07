@@ -594,6 +594,7 @@ textarea {
 --------------------------------------------------------------*/
 a {
   color: royalblue;
+  text-decoration: none;
 }
 a:visited {
   color: royalblue;
@@ -606,6 +607,7 @@ a:focus {
 }
 a:hover, a:active {
   outline: 0;
+  text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
