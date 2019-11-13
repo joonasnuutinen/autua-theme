@@ -853,6 +853,11 @@ a:hover, a:active {
   padding: 2em 0;
   background: #005468;
   text-align: center;
+  color: #ddd;
+}
+.site-footer .widget-area {
+  display: flex;
+  flex-direction: column;
 }
 .site-footer ul.menu, .site-footer ul.sub-menu {
   margin: 0;
@@ -869,7 +874,7 @@ a:hover, a:active {
   font-size: 85%;
 }
 .site-footer a {
-  color: white;
+  color: #ddd;
 }
 
 /*--------------------------------------------------------------
