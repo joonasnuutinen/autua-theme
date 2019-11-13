@@ -115,9 +115,19 @@ function autua_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'autua' ),
+		'name'          => esc_html__( 'Footer 1', 'autua' ),
 		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'autua' ),
+		'description'   => esc_html__( 'Upper (or left) footer widget area.', 'autua' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 2', 'autua' ),
+		'id'            => 'footer-2',
+		'description'   => esc_html__( 'Lower (or right) footer widget area.', 'autua' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
