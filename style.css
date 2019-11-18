@@ -862,6 +862,7 @@ a:hover, a:active {
 .site-footer .widget-area {
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 .site-footer ul.menu, .site-footer ul.sub-menu {
   margin: 0;
