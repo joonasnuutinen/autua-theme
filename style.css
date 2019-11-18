@@ -854,21 +854,23 @@ a:hover, a:active {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-  padding: 2em 0;
+  padding: 3em 0;
   background: #005468;
   text-align: center;
   color: #ddd;
-  display: flex;
-  flex-direction: column;
 }
 .site-footer .widget-area {
-  margin: 1em 0;
-  max-width: calc(1200px / 2);
+  width: 100%;
+  max-width: 1200px;
 }
 .site-footer ul.menu, .site-footer ul.sub-menu {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+.site-footer ul.menu {
+  display: flex;
+  flex-direction: column;
 }
 .site-footer ul.sub-menu li {
   font-size: 85%;
@@ -881,12 +883,12 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 320px) {
-  .site-footer {
+  .site-footer ul.menu {
     flex-direction: row;
     justify-content: center;
   }
-  .site-footer .widget-area {
-    width: 50%;
+  .site-footer ul.menu li {
+    margin: 0 0.5em;
   }
 }
 /*--------------------------------------------------------------

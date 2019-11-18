@@ -1,14 +1,12 @@
 .site-footer {
-    padding: 2em 0;
+    padding: 3em 0;
     background: $color__background-footer;
     text-align: center;
     color: $color__text-footer;
-    display: flex;
-    flex-direction: column;
 
     & .widget-area {
-        margin: 1em 0;
-        max-width: calc(#{$max-width__site} / 2);
+        width: 100%;
+        max-width: $max-width__site;
     }
 
     & ul.menu,
@@ -16,6 +14,11 @@
         margin: 0;
         padding: 0;
         list-style-type: none;
+    }
+
+    & ul.menu {
+        display: flex;
+        flex-direction: column;
     }
 
     & ul.sub-menu {
@@ -35,11 +38,13 @@
 
 @media screen and (min-width: 320px) {
     .site-footer {
-        flex-direction: row;
-        justify-content: center;
+        & ul.menu {
+            flex-direction: row;
+            justify-content: center;
 
-        & .widget-area {
-            width: 50%;
+            & li {
+                margin: 0 .5em;
+            }
         }
     }
 }
