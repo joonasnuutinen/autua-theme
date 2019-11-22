@@ -858,7 +858,7 @@ a:hover, a:active {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-  padding: 3em 0;
+  padding: 3em 10px;
   background: #005468;
   text-align: center;
   color: #ddd;
