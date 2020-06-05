@@ -1,7 +1,7 @@
 {
   "name": "joonasnuutinen/autua-theme",
   "type": "wordpress-theme",
-  "license": "GPLv3",
+  "license": "GPLv2",
   "description": "Autua theme",
   "homepage": "https://github.com/joonasnuutinen/autua-theme"
 }
