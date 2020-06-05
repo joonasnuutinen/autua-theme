@@ -13,63 +13,25 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php
-			$custom_404_id = get_theme_mod( 'custom_404_id' );
-			
-			// Show custom 404 page if one has been assigned
-			if ( $custom_404_id > 0 ) :
-				$custom_404_query = new WP_Query( array( 'page_id' => $custom_404_id ) );
-				while ( $custom_404_query->have_posts() ) :
-					$custom_404_query->the_post();
-					get_template_part( 'template-parts/content', 'page' );
-				endwhile;
-				wp_reset_postdata();
-			
-			// Otherwise, use the template below
-			else:
-			?>
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'autua' ); ?></h1>
+					<h1 class="page-title">Sivua ei löydy</h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'autua' ); ?></p>
+					<p>Etsimääsi sivua ei löydy.</p>
+
+					<p>Jos kirjoitit osoitteen itse, tarkistathan, että se meni oikein.</p>
+
+					<p>Jos klikkasit linkkiä, voit ilmoittaa toimimattomasta linkistä meille, niin yritämme korjata asian.</p>
+
+					<p>Voit <a href="<?php echo esc_url( home_url( '/' ) ); ?>">siirtyä etusivulle tästä</a> tai etsiä sisältöä alla olevalla hakulomakkeella.</p>
 
 					<?php
 					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'autua' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$autua_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'autua' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$autua_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
-			<?php
-			endif;
-			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
