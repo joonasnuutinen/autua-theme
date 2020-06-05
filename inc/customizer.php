@@ -15,19 +15,6 @@ function autua_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	// Custom 404 page
-	$wp_customize->add_setting( 'custom_404_id', array(
-		'default' => 0,
-		'sanitize_callback' => 'absint' // Post ID is a positive integer
-	) );
-	$wp_customize->add_control( 'custom_404_id', array( 
-		'type' => 'dropdown-pages',
-		'priority' => 10,
-		'section' => 'static_front_page',
-		'label' => __( '404 Page', 'autua' ),
-		'allow_addition' => true
-	) );
-
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',
