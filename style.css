@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Joonas Nuutinen
 Author URI: https://autua.fi
 Description: Autua theme
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: autua
@@ -813,7 +813,7 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .site-header,
 .site-content {
-  max-width: 1200px;
+  max-width: 800px;
   padding: 10px;
   margin: auto;
 }
@@ -865,7 +865,7 @@ a:hover, a:active {
 }
 .site-footer .widget-area {
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
 }
 .site-footer ul.menu, .site-footer ul.sub-menu {
